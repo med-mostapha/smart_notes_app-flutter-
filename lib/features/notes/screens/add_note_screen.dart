@@ -9,11 +9,9 @@ class AddNoteScreen extends StatelessWidget {
     final contentController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Add Note")),
-
+      appBar: AppBar(title: const Text('Add Note')),
       body: Padding(
         padding: const EdgeInsets.all(16),
-
         child: Column(
           children: [
             TextField(
@@ -28,7 +26,12 @@ class AddNoteScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                final note = {
+                  'title': titleController.text,
+                  'content': contentController.text,
+                };
+
+                Navigator.pop(context, note);
               },
               child: const Text('Save'),
             ),
