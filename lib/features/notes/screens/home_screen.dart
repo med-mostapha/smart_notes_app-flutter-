@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/features/notes/screens/add_note_screen.dart';
 import '../widgets/note_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,12 +17,18 @@ class HomeScreen extends StatelessWidget {
           fontWeight: FontWeight(400),
           fontSize: 24,
         ),
-        // leading: Icon(Icons.list_sharp)
       ),
+
       body: const NoteList(),
 
+      // body: const Text("Home"),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddNoteScreen()),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
