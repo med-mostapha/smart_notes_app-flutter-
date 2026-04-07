@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/features/notes/models/note_model.dart';
 
 class AddNoteScreen extends StatelessWidget {
   const AddNoteScreen({super.key});
@@ -26,10 +27,10 @@ class AddNoteScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                final note = {
-                  'title': titleController.text,
-                  'content': contentController.text,
-                };
+                final note = Note(
+                  title: titleController.text,
+                  content: contentController.text,
+                );
 
                 Navigator.pop(context, note);
               },

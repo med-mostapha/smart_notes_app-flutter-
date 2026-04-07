@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/features/notes/models/note_model.dart';
 import '../widgets/note_list.dart';
 import 'add_note_screen.dart';
 
@@ -10,9 +11,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Map<String, String>> notes = [];
+  List<Note> notes = [];
 
-  void addNote(Map<String, String> note) {
+  void addNote(Note note) {
     setState(() {
       notes.add(note);
     });

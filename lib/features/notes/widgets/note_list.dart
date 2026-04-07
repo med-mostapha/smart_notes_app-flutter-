@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/features/notes/models/note_model.dart';
 import 'note_card.dart';
 
 class NoteList extends StatelessWidget {
-  final List<Map<String, String>> notes;
+  final List<Note> notes;
 
   const NoteList({super.key, required this.notes});
 
@@ -14,11 +15,8 @@ class NoteList extends StatelessWidget {
 
     return ListView.builder(
       itemCount: notes.length,
-      itemBuilder: (context, index) {
-        return NoteCard(
-          title: notes[index]['title']!,
-          content: notes[index]['content']!,
-        );
+      itemBuilder: (context, i) {
+        return NoteCard(title: notes[i].title, content: notes[i].content);
       },
     );
   }
